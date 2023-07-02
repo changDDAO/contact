@@ -11,12 +11,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(title: Text('앱임')),
-            body: Container(
-              width:50, height: 50, color: Colors.blue,
-              padding: EdgeInsets.all(20),
+          appBar: AppBar(title: Text('앱임')),
+          body: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: 150,
+              height: 50, color: Colors.blue,
+
               child: Text('hi'),
             ),
-            ));
+          ),
+        ));
   }
 }
