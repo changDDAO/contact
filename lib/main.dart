@@ -14,13 +14,16 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(title: Text('앱임')),
             body: Text('안녕'),
             bottomNavigationBar: BottomAppBar(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(Icons.call),
-                  Icon(Icons.message),
-                  Icon(Icons.account_box),
-                ],
+              child: SizedBox(
+                height: 100,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(Icons.call),
+                    Icon(Icons.message),
+                    Icon(Icons.account_box),
+                  ],
+                ),
               )
             )));
   }
