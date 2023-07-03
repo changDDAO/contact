@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
           appBar: AppBar(),
-          body: Column(
+          body: Row(
             children: [
-              Flexible(flex: 3,child: Container(color: Colors.lightBlue,),),
-              Flexible(flex: 7,child: Container(color: Colors.amber),),
+              Expanded(child: Container( color: Colors.deepPurpleAccent,)),
+              Container(width: 100, color:Colors.lightBlue)
             ],
           )
         )
