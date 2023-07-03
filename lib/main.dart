@@ -12,37 +12,54 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
           appBar: AppBar(),
-          body: Container(
-            height: 150,
-            padding: EdgeInsets.all(20),
-            child: Row(
+          body: ListView(
+            children: [
+              ContactInfo(),
+              ContactInfo(),
+              ContactInfo(),
+              ContactInfo(),ContactInfo(),ContactInfo(),
+              ContactInfo(),ContactInfo(),ContactInfo(),ContactInfo(),
+              ContactInfo(),ContactInfo(),ContactInfo(),ContactInfo(),ContactInfo(),
+            ]
+          ),
+          bottomNavigationBar: BotNavBar(),
 
-              children: [
-                Image.asset('cat.png', width: 150,),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children:[
-                    Text('카메라 팝니다',style: TextStyle(
-                      color: Colors.deepOrange,
-                      fontSize: 20,
-
-                    ),),
-                    Text('금호동 3가'),
-                    Text('7000원'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(Icons.favorite),
-                        Text('4')
-                      ],
-                    )
-                    ],),
-                )
-            ],
-            ),
-          )
         )
     );
   }
 }
+
+class ContactInfo extends StatelessWidget {
+  const ContactInfo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      child: Row(
+        children: [
+          Icon(Icons.account_circle,size: 40),
+          Expanded(child: Text('윤창호'))
+          ],
+      ),
+    );
+  }
+}
+class BotNavBar extends StatelessWidget {
+  const BotNavBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const BottomAppBar(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(Icons.call),
+          Icon(Icons.message),
+          Icon(Icons.contact_page),
+        ],
+      ),
+    );
+  }
+}
+
+
