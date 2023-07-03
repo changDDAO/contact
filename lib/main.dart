@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'onboarding.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -9,57 +11,46 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(),
-          body: ListView(
-            children: [
-              ContactInfo(),
-              ContactInfo(),
-              ContactInfo(),
-              ContactInfo(),ContactInfo(),ContactInfo(),
-              ContactInfo(),ContactInfo(),ContactInfo(),ContactInfo(),
-              ContactInfo(),ContactInfo(),ContactInfo(),ContactInfo(),ContactInfo(),
-            ]
-          ),
-          bottomNavigationBar: BotNavBar(),
-
-        )
+    return const MaterialApp(
+        home: OnBoardingPage(),
     );
   }
+
 }
 
-class ContactInfo extends StatelessWidget {
-  const ContactInfo({Key? key}) : super(key: key);
+class MyPage extends StatelessWidget {
+  const MyPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      child: Row(
-        children: [
-          Icon(Icons.account_circle,size: 40),
-          Expanded(child: Text('윤창호'))
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Main Page'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            const Text('Main Screen',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25
+            ),
+            ),
+            ElevatedButton(
+                onPressed: (){},
+                child: const Text('Go to onboarding screen')
+            )
           ],
-      ),
-    );
-  }
-}
-class BotNavBar extends StatelessWidget {
-  const BotNavBar({Key? key}) : super(key: key);
+        ),
 
-  @override
-  Widget build(BuildContext context) {
-    return const BottomAppBar(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Icon(Icons.call),
-          Icon(Icons.message),
-          Icon(Icons.contact_page),
-        ],
-      ),
+      )
     );
   }
 }
+
+
+
+
+
 
 
