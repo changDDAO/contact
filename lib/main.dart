@@ -12,11 +12,35 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
           appBar: AppBar(),
-          body: Row(
-            children: [
-              Expanded(child: Container( color: Colors.deepPurpleAccent,)),
-              Container(width: 100, color:Colors.lightBlue)
+          body: Container(
+            height: 150,
+            padding: EdgeInsets.all(20),
+            child: Row(
+
+              children: [
+                Image.asset('cat.png', width: 150,),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children:[
+                    Text('카메라 팝니다',style: TextStyle(
+                      color: Colors.deepOrange,
+                      fontSize: 20,
+
+                    ),),
+                    Text('금호동 3가'),
+                    Text('7000원'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite),
+                        Text('4')
+                      ],
+                    )
+                    ],),
+                )
             ],
+            ),
           )
         )
     );
